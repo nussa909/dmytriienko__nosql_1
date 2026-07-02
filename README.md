@@ -1,4 +1,5 @@
 **Запуск файлів**
+
 python .\scripts\01_load_data.py
 
 mongosh <MONGO_URI> --file scripts/02_transform.js
