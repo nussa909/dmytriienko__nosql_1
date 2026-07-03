@@ -119,6 +119,7 @@ result_task3 = db.tracks.aggregate([
             totalTracks: {$gte: 100}
         }
     },
+
     {
         $project:{
             _id:0,
@@ -128,8 +129,13 @@ result_task3 = db.tracks.aggregate([
             avg_valence:1,
             totalTracks:1 
         }
+    },
+    {
+        $sort: {avg_danceability:-1}
+    },
+    {
+        $limit: 1
     }
-
 ]).toArray();
 
 print("Завдання 3:");
